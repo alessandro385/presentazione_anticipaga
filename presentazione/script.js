@@ -102,4 +102,27 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('load', setActiveLinkOnLoad);
   window.addEventListener('scroll', setActiveLinkOnLoad); // Re-evaluate on scroll for robustness
 
+  // Contact Options Toggle
+  const contactTriggerButton = document.getElementById('contact-trigger-button');
+  const contactOptions = document.getElementById('contact-options');
+
+  if (contactTriggerButton && contactOptions) {
+    contactTriggerButton.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default anchor behavior
+      contactOptions.classList.toggle('hidden');
+
+      // Optional: Change button text based on state or provide ARIA attributes for accessibility
+      // For example, to update ARIA expanded state:
+      // const isExpanded = !contactOptions.classList.contains('hidden');
+      // contactTriggerButton.setAttribute('aria-expanded', isExpanded);
+
+      // Example of changing text (can be adapted):
+      // if (isExpanded) {
+      //   contactTriggerButton.textContent = 'Nascondi Opzioni di Contatto'; 
+      // } else {
+      //   contactTriggerButton.textContent = 'Contattaci Ora';
+      // }
+    });
+  }
+
 }); 
